@@ -1,17 +1,19 @@
 package patronessoftware;
 
+import Comandos.ComandosSala;
 import java.util.ArrayList;
 
 /**
  *
  * @author Sergio
  */
-public abstract class Sala {
+public abstract class Sala implements ComandosSala {
     private Usuario administrador;
     private ArrayList<Usuario> moderadores;
     private ArrayList<Usuario> miembros;
     private String titulo;
     private String descripcion;
+    private String mensajeBienvenida;
     private int tamaño;
 
     public Sala(Usuario administrador, String titulo, String descripcion, int tamaño) {
@@ -57,6 +59,7 @@ public abstract class Sala {
         return titulo;
     }
 
+    @Override
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -65,6 +68,7 @@ public abstract class Sala {
         return descripcion;
     }
 
+    @Override
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
@@ -78,8 +82,13 @@ public abstract class Sala {
     }
     
     public void suscribirse(Usuario usuario) {
-        if(!miembros.contains(usuario)) {
-            miembros.add(usuario);
+        //Solo suscribirse si el tamaño es el adecuado
+        if (miembros.size()<this.tamaño){
+            if(!miembros.contains(usuario)) {
+                miembros.add(usuario);
+            }
+        }else{
+            System.out.println("La sala" + this.titulo +"ha alcanzado el límite de usuarios");
         }
     }
     

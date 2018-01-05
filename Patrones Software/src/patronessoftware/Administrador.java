@@ -14,5 +14,4 @@ public class Administrador extends Usuario {
     public void enviarMensaje(String mensaje, Sala objetivo) {
         objetivo.enviarMensaje("[ADMIN] " + mensaje, this);
     }
-    
 }

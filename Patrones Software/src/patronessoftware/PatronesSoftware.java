@@ -1,5 +1,5 @@
 package patronessoftware;
-
+import Comandos.*;
 /**
  * @author Sergio
  */
@@ -28,8 +28,13 @@ public class PatronesSoftware {
         user3.enviarMensaje("Holaaaa", sala);
         
         user3.desuscribirse(sala);
-        
         user1.enviarMensaje("Hello!", sala);
+        SetSalaTitulo comando1 = new SetSalaTitulo(sala, "test");
+        Invocador accionar = new Invocador(comando1);
+        accionar.accionar();
+        System.out.println(sala.getTitulo());
+        accionar.deshacer();
+        System.out.println(sala.getTitulo());
     }
     
 }
