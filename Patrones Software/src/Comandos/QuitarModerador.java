@@ -11,22 +11,22 @@ import patronessoftware.*;
  *
  * @author Zamar
  */
-public class echarUsuario implements Command{
+public class QuitarModerador implements Command{
     Sala sala;
     Usuario usuario;
-    public echarUsuario(Sala sala,Usuario usuario) {
+    public QuitarModerador(Sala sala,Usuario usuario) {
         this.sala = sala;
         this.usuario = usuario;
     }
 
     @Override
     public void execute() {
-       sala.desuscribirse(usuario);
+        sala.quitarModerador(usuario);
     }
 
     @Override
     public void undo() {
-        sala.suscribirse(usuario);
+        sala.añadirModerador(usuario);
     }
     
     

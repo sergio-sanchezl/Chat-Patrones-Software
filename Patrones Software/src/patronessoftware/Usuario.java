@@ -1,5 +1,7 @@
 package patronessoftware;
 
+import Poderes.Poder;
+import Poderes.*;
 import java.util.ArrayList;
 
 /**
@@ -11,7 +13,7 @@ public abstract class Usuario {
     private String ID;
     private String apodo;
     private boolean conectado;
-
+    public Poder tipoPoder;
     public Usuario(String ID, String apodo) {
         this.ID = ID;
         this.apodo = apodo;
@@ -65,7 +67,20 @@ public abstract class Usuario {
     public void recibirMensaje(String mensaje, Usuario user, Sala sala) {
         System.out.println("[Sala \"" + sala.getTitulo() + "\"] El usuario " + this.ID + " " + this.apodo + " ha recibido el mensaje: \"" + mensaje + "\" de " + user.getID() + " " + user.getApodo());
     }
-    
+
+    public Poder getTipoPoder() {
+        return tipoPoder;
+    }
+
+    public void setTipoPoder(Poder tipoPoder) {
+        this.tipoPoder = tipoPoder;
+    }
+    public void echarUsuario(Sala sala, Usuario Usuario){
+        this.tipoPoder.echarUsuario(sala, Usuario);
+    }
+    public void deshacerUltimaAccion(){
+        this.tipoPoder.deshacerUltimaAccion();
+    }
     public abstract void enviarMensaje(String mensaje, Sala objetivo);
     
 }

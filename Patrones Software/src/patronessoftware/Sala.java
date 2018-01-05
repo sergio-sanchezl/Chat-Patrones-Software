@@ -1,13 +1,12 @@
 package patronessoftware;
 
-import Comandos.ComandosSala;
 import java.util.ArrayList;
 
 /**
  *
  * @author Sergio
  */
-public abstract class Sala implements ComandosSala {
+public abstract class Sala {
     private Usuario administrador;
     private ArrayList<Usuario> moderadores;
     private ArrayList<Usuario> miembros;
@@ -59,7 +58,6 @@ public abstract class Sala implements ComandosSala {
         return titulo;
     }
 
-    @Override
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -68,7 +66,6 @@ public abstract class Sala implements ComandosSala {
         return descripcion;
     }
 
-    @Override
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
@@ -86,6 +83,7 @@ public abstract class Sala implements ComandosSala {
         if (miembros.size()<this.tamaño){
             if(!miembros.contains(usuario)) {
                 miembros.add(usuario);
+                 System.out.print(usuario.getApodo() + "a la Sala: "+ this.getTitulo()+"\n");
             }
         }else{
             System.out.println("La sala" + this.titulo +"ha alcanzado el límite de usuarios");
@@ -93,9 +91,18 @@ public abstract class Sala implements ComandosSala {
     }
     
     public void desuscribirse(Usuario usuario) {
-        miembros.remove(usuario);
+        if(miembros.remove(usuario)){
+           System.out.print(usuario.getApodo() + " de la Sala: "+ this.getTitulo()+"\n");
+        }
+        else System.out.println("El usuario no existe en la sala \n");
+        
     }
-    
+    public void quitarModerador(Usuario usuario){
+        moderadores.remove(usuario);
+    }
+    public void añadirModerador(Usuario usuario){
+        moderadores.add(usuario);
+    }
     public void procesarInput(String texto, Usuario emisor) {
         enviarMensaje(texto,emisor);
     }

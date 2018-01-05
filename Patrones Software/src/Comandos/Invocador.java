@@ -22,4 +22,8 @@ public class Invocador {
     public void deshacer(){
         elComando.undo();
     }
+    
+    public void setComando(Command elComando){
+        this.elComando = elComando;
+    }
 }

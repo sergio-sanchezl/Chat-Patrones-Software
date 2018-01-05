@@ -5,6 +5,9 @@
  */
 package patronessoftware;
 
+import Poderes.PoderesModerador;
+import Poderes.*;
+
 /**
  *
  * @author Zamar
@@ -13,6 +16,7 @@ public class Moderador extends Usuario{
 
     public Moderador(Usuario usuario) {
         super(usuario.getID(), usuario.getApodo());
+        super.setTipoPoder(new PoderesModerador());
     }
 
     @Override

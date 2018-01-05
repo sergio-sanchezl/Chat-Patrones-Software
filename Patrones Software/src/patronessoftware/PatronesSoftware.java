@@ -26,15 +26,13 @@ public class PatronesSoftware {
         user3.suscribirse(sala);
         
         user3.enviarMensaje("Holaaaa", sala);
-        
-        user3.desuscribirse(sala);
+        user2.echarUsuario(sala, user3); //Intentar echar con usuario normal
+        user1.echarUsuario(sala, user3); //Intentar echar con admin
         user1.enviarMensaje("Hello!", sala);
-        SetSalaTitulo comando1 = new SetSalaTitulo(sala, "test");
-        Invocador accionar = new Invocador(comando1);
-        accionar.accionar();
-        System.out.println(sala.getTitulo());
-        accionar.deshacer();
-        System.out.println(sala.getTitulo());
+        user1.deshacerUltimaAccion(); //Con Command es muy facil deshacer la ultima accion
+        
+        user1.echarUsuario(sala, user3);
+            
     }
     
 }
