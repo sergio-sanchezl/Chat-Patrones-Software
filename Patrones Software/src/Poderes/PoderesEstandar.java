@@ -5,7 +5,7 @@
  */
 package Poderes;
 
-import Sala.SalaTest;
+import Sala.Sala;
 import patronessoftware.Usuario;
 
 /**
@@ -20,7 +20,7 @@ public class PoderesEstandar extends Poder {
     /**
      * No puede ecahr a nadie
      */
-    public void echarUsuario(SalaTest sala, Usuario usuario) {
+    public void echarUsuario(Sala sala, Usuario usuario) {
           System.out.println("No tienes los permisos necesarios");
     }
     

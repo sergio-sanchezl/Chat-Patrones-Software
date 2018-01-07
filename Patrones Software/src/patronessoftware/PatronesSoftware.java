@@ -1,5 +1,5 @@
 package patronessoftware;
-import Sala.SalaTest;
+import Sala.Sala;
 import Comandos.*;
 /**
  * @author Sergio
@@ -21,8 +21,8 @@ public class PatronesSoftware {
         Usuario user3 = FactoriaUsuario.crearUsuario("3","Salvatore",false);
         
         // Creamos una sala publica ya que la contraseña es "", vacía.
-        SalaTest sala = FactoriaSala.crearSala(user1,"Sala Guay","Esta es una sala guay", 10, "");
-        SalaTest salaotra = sala;
+        Sala sala = FactoriaSala.crearSala(user1,"Sala Guay","Esta es una sala guay", 10, "");
+        Sala salaotra = sala;
            System.out.println("Sally HashCode: " + System.identityHashCode(System.identityHashCode(sala)));
         System.out.println("Clone HashCode: " + System.identityHashCode(System.identityHashCode(salaotra)));
         /*

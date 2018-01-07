@@ -1,4 +1,4 @@
-package Sala;
+package SalaTest;
 
 import java.util.ArrayList;
 import patronessoftware.Usuario;
@@ -84,7 +84,7 @@ public abstract class SalaTest {
         if (miembros.size()<this.tamaño){
             if(!miembros.contains(usuario)) {
                 miembros.add(usuario);
-                 System.out.print(usuario.getApodo() + "a la Sala: "+ this.getTitulo()+"\n");
+                 System.out.print(usuario.getApodo() + "a la SalaTest: "+ this.getTitulo()+"\n");
             }
         }else{
             System.out.println("La sala" + this.titulo +"ha alcanzado el límite de usuarios");
@@ -93,7 +93,7 @@ public abstract class SalaTest {
     
     public void desuscribirse(Usuario usuario) {
         if(miembros.remove(usuario)){
-           System.out.print(usuario.getApodo() + " de la Sala: "+ this.getTitulo()+"\n");
+           System.out.print(usuario.getApodo() + " de la SalaTest: "+ this.getTitulo()+"\n");
         }
         else System.out.println("El usuario no existe en la sala \n");
         

@@ -1,6 +1,6 @@
 package patronessoftware;
 
-import Sala.SalaTest;
+import Sala.Sala;
 import Poderes.Poder;
 import Poderes.*;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @author Sergio
  */
 public abstract class Usuario {
-    private ArrayList<SalaTest> salasSuscritas;
+    private ArrayList<Sala> salasSuscritas;
     private String ID;
     private String apodo;
     private boolean conectado;
@@ -23,11 +23,11 @@ public abstract class Usuario {
         this.salasSuscritas = new ArrayList<>();
     }
     
-    public ArrayList<SalaTest> getSalasSuscritas() {
+    public ArrayList<Sala> getSalasSuscritas() {
         return salasSuscritas;
     }
 
-    public void setSalasSuscritas(ArrayList<SalaTest> salasSuscritas) {
+    public void setSalasSuscritas(ArrayList<Sala> salasSuscritas) {
         this.salasSuscritas = salasSuscritas;
     }
 
@@ -55,17 +55,17 @@ public abstract class Usuario {
         this.conectado = conectado;
     }
     
-    public void suscribirse(SalaTest sala) {
+    public void suscribirse(Sala sala) {
         sala.suscribirse(this);
         salasSuscritas.add(sala);
     }
     
-    public void desuscribirse(SalaTest sala) {
+    public void desuscribirse(Sala sala) {
         sala.desuscribirse(this);
         salasSuscritas.remove(sala);
     }
     
-    public void recibirMensaje(String mensaje, Usuario user, SalaTest sala) {
+    public void recibirMensaje(String mensaje, Usuario user, Sala sala) {
         System.out.println("[Sala \"" + sala.getTitulo() + "\"] El usuario " + this.ID + " " + this.apodo + " ha recibido el mensaje: \"" + mensaje + "\" de " + user.getID() + " " + user.getApodo());
     }
 
@@ -76,12 +76,12 @@ public abstract class Usuario {
     public void setTipoPoder(Poder tipoPoder) {
         this.tipoPoder = tipoPoder;
     }
-    public void echarUsuario(SalaTest sala, Usuario Usuario){
+    public void echarUsuario(Sala sala, Usuario Usuario){
         this.tipoPoder.echarUsuario(sala, Usuario);
     }
     public void deshacerUltimaAccion(){
         this.tipoPoder.deshacerUltimaAccion();
     }
-    public abstract void enviarMensaje(String mensaje, SalaTest objetivo);
+    public abstract void enviarMensaje(String mensaje, Sala objetivo);
     
 }

@@ -8,7 +8,7 @@ package Poderes;
 import Comandos.EcharUsuario;
 import Comandos.Invocador;
 import Comandos.QuitarModerador;
-import Sala.SalaTest;
+import Sala.Sala;
 import patronessoftware.Usuario;
 
 /**
@@ -23,7 +23,7 @@ public class PoderesAdministrador extends Poder {
     /**
      * Puede echar a quien quiera, es el administrador.
      */
-    public void echarUsuario(SalaTest sala, Usuario usuario) {
+    public void echarUsuario(Sala sala, Usuario usuario) {
            EcharUsuario echar = new EcharUsuario(sala,usuario);
            accionar = new Invocador(echar);
            accionar.accionar();

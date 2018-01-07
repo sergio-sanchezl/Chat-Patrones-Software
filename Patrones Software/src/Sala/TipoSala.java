@@ -30,10 +30,6 @@ public abstract class TipoSala {
         this.moderadores = new ArrayList<>();
         this.miembros = new ArrayList<>();
     }
-    public SalaTest init() {
-        administrador.suscribirse(this);
-        return this;
-    }
     public Usuario getAdministrador() {
         return administrador;
     }
@@ -108,14 +104,5 @@ public abstract class TipoSala {
     }
     public void añadirModerador(Usuario usuario){
         moderadores.add(usuario);
-    }
-    public void procesarInput(String texto, Usuario emisor) {
-        enviarMensaje(texto,emisor);
-    }
-    
-    public void enviarMensaje(String texto, Usuario emisor) {
-        for(Usuario usuario : miembros) {
-            usuario.recibirMensaje(texto, emisor, this);
-        }
     }
 }

@@ -5,7 +5,7 @@
  */
 package Comandos;
 
-import Sala.SalaTest;
+import Sala.Sala;
 import java.util.ArrayList;
 import patronessoftware.*;
 
@@ -14,9 +14,9 @@ import patronessoftware.*;
  * @author Zamar
  */
 public class EcharTodosUsuarios implements Command{
-    SalaTest sala;
+    Sala sala;
     ArrayList <Usuario> usuarios;
-    public EcharTodosUsuarios(SalaTest sala) {
+    public EcharTodosUsuarios(Sala sala) {
         this.sala = sala;
         this.usuarios = sala.getMiembros();
     }

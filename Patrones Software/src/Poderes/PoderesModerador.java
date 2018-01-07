@@ -7,7 +7,7 @@ package Poderes;
 
 import Comandos.EcharUsuario;
 import Comandos.Invocador;
-import Sala.SalaTest;
+import Sala.Sala;
 import patronessoftware.Usuario;
 
 /**
@@ -22,7 +22,7 @@ public class PoderesModerador extends Poder {
     /**
      * Puede echar a quien excepto al administrador local y otros moderadores
      */
-    public void echarUsuario(SalaTest sala, Usuario usuario) {
+    public void echarUsuario(Sala sala, Usuario usuario) {
             if(usuario != sala.getAdministrador() && !sala.getModeradores().contains(usuario)){
                    EcharUsuario echar = new EcharUsuario(sala,usuario);
                    this.accionar = new Invocador(echar);
