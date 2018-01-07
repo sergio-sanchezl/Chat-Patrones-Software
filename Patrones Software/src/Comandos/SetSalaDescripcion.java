@@ -5,6 +5,7 @@
  */
 package Comandos;
 
+import Sala.SalaTest;
 import patronessoftware.*;
 
 /**
@@ -12,10 +13,10 @@ import patronessoftware.*;
  * @author Zamar
  */
 public class SetSalaDescripcion implements Command{
-    Sala sala;
+    SalaTest sala;
     String descripcion;
     String antiguodescripcion;
-    public SetSalaDescripcion(Sala sala,String descripcion) {
+    public SetSalaDescripcion(SalaTest sala,String descripcion) {
         this.sala = sala;
         this.descripcion = descripcion;
         this.antiguodescripcion = sala.getDescripcion();

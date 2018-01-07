@@ -1,4 +1,5 @@
 package patronessoftware;
+import Sala.SalaTest;
 import Comandos.*;
 /**
  * @author Sergio
@@ -20,8 +21,11 @@ public class PatronesSoftware {
         Usuario user3 = FactoriaUsuario.crearUsuario("3","Salvatore",false);
         
         // Creamos una sala publica ya que la contraseña es "", vacía.
-        Sala sala = FactoriaSala.crearSala(user1,"Sala Guay","Esta es una sala guay", 10, "");
-        
+        SalaTest sala = FactoriaSala.crearSala(user1,"Sala Guay","Esta es una sala guay", 10, "");
+        SalaTest salaotra = sala;
+           System.out.println("Sally HashCode: " + System.identityHashCode(System.identityHashCode(sala)));
+        System.out.println("Clone HashCode: " + System.identityHashCode(System.identityHashCode(salaotra)));
+        /*
         user2.suscribirse(sala);
         user3.suscribirse(sala);
         
@@ -31,7 +35,9 @@ public class PatronesSoftware {
         user1.enviarMensaje("Hello!", sala);
         user1.deshacerUltimaAccion(); //Con Command es muy facil deshacer la ultima accion
         
-        user1.echarUsuario(sala, user3);
+        user1.echarUsuario(sala, user3);*/
+        
+        
             
     }
     

@@ -5,6 +5,7 @@
  */
 package Comandos;
 
+import Sala.SalaTest;
 import patronessoftware.*;
 
 /**
@@ -12,9 +13,9 @@ import patronessoftware.*;
  * @author Zamar
  */
 public class QuitarModerador implements Command{
-    Sala sala;
+    SalaTest sala;
     Usuario usuario;
-    public QuitarModerador(Sala sala,Usuario usuario) {
+    public QuitarModerador(SalaTest sala,Usuario usuario) {
         this.sala = sala;
         this.usuario = usuario;
     }

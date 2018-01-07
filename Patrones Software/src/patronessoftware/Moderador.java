@@ -5,6 +5,7 @@
  */
 package patronessoftware;
 
+import Sala.SalaTest;
 import Poderes.PoderesModerador;
 import Poderes.*;
 
@@ -20,7 +21,7 @@ public class Moderador extends Usuario{
     }
 
     @Override
-    public void enviarMensaje(String mensaje, Sala objetivo) {
+    public void enviarMensaje(String mensaje, SalaTest objetivo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

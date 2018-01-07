@@ -1,5 +1,6 @@
 package patronessoftware;
 
+import Sala.SalaTest;
 import Poderes.PoderesEstandar;
 import Poderes.*;
 
@@ -15,7 +16,7 @@ public class UsuarioEstandar extends Usuario {
     }
     
     @Override
-    public void enviarMensaje(String mensaje, Sala objetivo) {
+    public void enviarMensaje(String mensaje, SalaTest objetivo) {
         objetivo.enviarMensaje(mensaje, this);
     }
 }

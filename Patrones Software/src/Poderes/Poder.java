@@ -5,6 +5,7 @@
  */
 package Poderes;
 
+import Sala.SalaTest;
 import Comandos.*;
 import patronessoftware.*;
 
@@ -14,7 +15,7 @@ import patronessoftware.*;
  */
 public abstract class Poder {
     protected Invocador accionar;
-    public abstract void echarUsuario(Sala sala, Usuario usuario);
+    public abstract void echarUsuario(SalaTest sala, Usuario usuario);
     
     public  void deshacerUltimaAccion(){
         accionar.deshacer();

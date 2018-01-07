@@ -5,6 +5,7 @@
  */
 package Comandos;
 
+import Sala.SalaTest;
 import patronessoftware.*;
 
 /**
@@ -12,9 +13,9 @@ import patronessoftware.*;
  * @author Zamar
  */
 public class EcharUsuario implements Command{
-    Sala sala;
+    SalaTest sala;
     Usuario usuario;
-    public EcharUsuario(Sala sala,Usuario usuario) {
+    public EcharUsuario(SalaTest sala,Usuario usuario) {
         this.sala = sala;
         this.usuario = usuario;
     }

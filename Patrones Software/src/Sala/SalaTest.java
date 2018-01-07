@@ -1,12 +1,13 @@
-package patronessoftware;
+package Sala;
 
 import java.util.ArrayList;
+import patronessoftware.Usuario;
 
 /**
  *
  * @author Sergio
  */
-public abstract class Sala {
+public abstract class SalaTest {
     private Usuario administrador;
     private ArrayList<Usuario> moderadores;
     private ArrayList<Usuario> miembros;
@@ -15,7 +16,7 @@ public abstract class Sala {
     private String mensajeBienvenida;
     private int tamaño;
 
-    public Sala(Usuario administrador, String titulo, String descripcion, int tamaño) {
+    public SalaTest(Usuario administrador, String titulo, String descripcion, int tamaño) {
         this.administrador = administrador;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -24,7 +25,7 @@ public abstract class Sala {
         this.miembros = new ArrayList<>();
     }
     
-    public Sala init() {
+    public SalaTest init() {
         administrador.suscribirse(this);
         return this;
     }
