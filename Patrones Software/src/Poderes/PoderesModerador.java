@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Poderes;
 
 import Comandos.EcharUsuario;
 import Comandos.Invocador;
 import Sala.Sala;
-import patronessoftware.Usuario;
+import Usuarios.Usuario;
 
 /**
  *
@@ -31,6 +26,16 @@ public class PoderesModerador extends Poder {
             else{ //Esta intentando 
                 System.out.println("No tienes los permisos necesarios");
             }
+    }
+
+    @Override
+    public void añadirModerador(Sala sala, Usuario usuario) {
+        System.out.println("No tienes los permisos necesarios");
+    }
+
+    @Override
+    public void quitarModerador(Sala sala, Usuario usuario) {
+        System.out.println("No tienes los permisos necesarios");
     }
 
     

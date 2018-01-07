@@ -1,17 +1,20 @@
 package Sala;
 
 import java.util.ArrayList;
-import patronessoftware.Usuario;
+import Usuarios.Usuario;
 
 /**
  *
  * @author Sergio
  */
 public abstract class Sala {
+
     private TipoSala sala;
+
     public Sala(TipoSala sala) {
-        this.sala=sala;
+        this.sala = sala;
     }
+
     public Sala init() {
         sala.getAdministrador().suscribirse(this);
         return this;
@@ -25,7 +28,6 @@ public abstract class Sala {
         this.sala = sala;
     }
 
-    
     public Usuario getAdministrador() {
         return sala.getAdministrador();
     }
@@ -73,31 +75,40 @@ public abstract class Sala {
     public void setTamaño(int tamaño) {
         this.sala.setTamaño(tamaño);
     }
-    
+
     public abstract void suscribirse(Usuario usuario);
+
     public abstract void suscribirse(Usuario usuario, String contraseña);
-    
-    
-    
+
     public void desuscribirse(Usuario usuario) {
-    if(this.sala.getMiembros().remove(usuario)){
-           System.out.print(usuario.getApodo() + " de la SalaTest: "+ this.getTitulo()+"\n");
+        if (this.sala.getMiembros().remove(usuario)) {
+            System.out.print(usuario.getApodo() + " de la SalaTest: " + this.getTitulo() + "\n");
+        } else {
+            System.out.println("El usuario no existe en la sala \n");
         }
-        else System.out.println("El usuario no existe en la sala \n");
     }
-    public void quitarModerador(Usuario usuario){
+
+    public void quitarModerador(Usuario usuario) {
         this.sala.quitarModerador(usuario);
     }
-    public void añadirModerador(Usuario usuario){
+
+    public void añadirModerador(Usuario usuario) {
         this.sala.añadirModerador(usuario);
     }
+
     public void procesarInput(String texto, Usuario emisor) {
-        enviarMensaje(texto,emisor);
+        enviarMensaje(texto, emisor);
+    }
+
+    public void enviarMensaje(String texto, Usuario emisor) {
+        for (Usuario usuario : this.sala.getMiembros()) {
+            usuario.recibirMensaje(texto, emisor, this);
+        }
     }
     
-    public void enviarMensaje(String texto, Usuario emisor) {
-        for(Usuario usuario : this.sala.getMiembros()) {
-            usuario.recibirMensaje(texto, emisor, this);
+    public void enviarSusurro(String texto, Usuario emisor, Usuario receptor) {
+        if(this.sala.getMiembros().contains(receptor)) {
+            receptor.recibirMensaje("[SUSURRO] " + texto, emisor, this);
         }
     }
 }

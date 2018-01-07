@@ -5,7 +5,7 @@
  */
 package Sala;
 
-import patronessoftware.Usuario;
+import Usuarios.Usuario;
 
 /**
  * Concreto del implementador, esto es el caso de implementar el publico, el constructor no necesitará contraseña.

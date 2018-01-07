@@ -5,7 +5,7 @@
  */
 package Sala;
 
-import patronessoftware.Usuario;
+import Usuarios.Usuario;
 
 /**
  *

@@ -1,4 +1,4 @@
-package patronessoftware;
+package Usuarios;
 
 import Sala.Sala;
 import Poderes.Poder;
@@ -82,6 +82,9 @@ public abstract class Usuario {
     public void deshacerUltimaAccion(){
         this.tipoPoder.deshacerUltimaAccion();
     }
+    
+    public abstract void enviarSusurro(String mensaje, Sala objetivo, Usuario receptor);
+    
     public abstract void enviarMensaje(String mensaje, Sala objetivo);
     
 }

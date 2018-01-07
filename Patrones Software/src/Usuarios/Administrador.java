@@ -1,4 +1,4 @@
-package patronessoftware;
+package Usuarios;
 
 import Sala.Sala;
 import Poderes.PoderesAdministrador;
@@ -17,6 +17,11 @@ public class Administrador extends Usuario {
     
     @Override
     public void enviarMensaje(String mensaje, Sala objetivo) {
-        objetivo.enviarMensaje("[ADMIN] " + mensaje, this);
+        super.tipoPoder.enviarMensaje(objetivo, this, "[ADMIN] " + mensaje);
+    }
+
+    @Override
+    public void enviarSusurro(String mensaje, Sala objetivo, Usuario receptor) {
+        super.tipoPoder.enviarSusurro(objetivo, this, receptor, "[ADMIN] " + mensaje);
     }
 }

@@ -1,4 +1,6 @@
 package patronessoftware;
+import Usuarios.Usuario;
+import Usuarios.FactoriaUsuario;
 import Sala.FactoriaSala;
 import Sala.Sala;
 import Comandos.*;
@@ -33,6 +35,7 @@ public class PatronesSoftware {
         user2.echarUsuario(sala, user3); //Intentar echar con usuario normal
         user1.echarUsuario(sala, user3); //Intentar echar con admin
         user1.enviarMensaje("Hello!", sala);
+        user2.enviarSusurro("Susurrito", sala, user1);
         user1.deshacerUltimaAccion(); //Con Command es muy facil deshacer la ultima accion
         
         user1.echarUsuario(sala, user3);

@@ -5,6 +5,7 @@
  */
 package Comandos;
 
+import Usuarios.Usuario;
 import Sala.Sala;
 import patronessoftware.*;
 

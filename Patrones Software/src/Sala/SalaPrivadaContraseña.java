@@ -1,7 +1,7 @@
 package Sala;
 
 import java.util.ArrayList;
-import patronessoftware.Usuario;
+import Usuarios.Usuario;
 
 /**
  *
