@@ -9,6 +9,11 @@ package Interprete;
  *
  * @author Sergio
  */
-public interface Interprete {
-    public void interpretar(Contexto contexto);
+public class InterpreteCambiarNombre implements Interprete {
+
+    @Override
+    public void interpretar(Contexto contexto) {
+        System.out.println("InterpreteCambiarNombre con contexto: " + contexto.toString());
+    }
+    
 }

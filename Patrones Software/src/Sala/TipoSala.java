@@ -130,5 +130,7 @@ public abstract class TipoSala {
             moderadores.add(usuario);
         }
     }
+    
+    
 
 }

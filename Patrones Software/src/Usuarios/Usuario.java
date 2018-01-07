@@ -91,5 +91,12 @@ public abstract class Usuario {
     public abstract void enviarSusurro(String mensaje, Sala objetivo, Usuario receptor);
     
     public abstract void enviarMensaje(String mensaje, Sala objetivo);
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "ID=" + ID + ", apodo=" + apodo + '}';
+    }
+    
+    
     
 }

@@ -1,5 +1,6 @@
 package Sala;
 
+import Interprete.Parser;
 import java.util.ArrayList;
 import Usuarios.Usuario;
 
@@ -97,7 +98,8 @@ public abstract class Sala {
     }
 
     public void procesarInput(String texto, Usuario emisor) {
-        enviarMensaje(texto, emisor);
+        //this.enviarMensaje(texto, emisor);
+        new Parser().interpretar(this, emisor, texto);
     }
 
     public void enviarMensaje(String texto, Usuario emisor) {
@@ -111,4 +113,11 @@ public abstract class Sala {
             receptor.recibirMensaje("[SUSURRO] " + texto, emisor, this);
         }
     }
+
+    @Override
+    public String toString() {
+        return sala.getTitulo();
+    }
+    
+    
 }

@@ -9,6 +9,11 @@ package Interprete;
  *
  * @author Sergio
  */
-public class InterpreteCliente {
+public class InterpreteEcharUsuario implements Interprete {
+
+    @Override
+    public void interpretar(Contexto contexto) {
+        System.out.println("InterpreteEcharUsuario con contexto: " + contexto.toString());
+    }
     
 }
