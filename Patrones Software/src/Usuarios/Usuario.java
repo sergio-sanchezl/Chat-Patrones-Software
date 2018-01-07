@@ -1,7 +1,6 @@
 package Usuarios;
 
 import Sala.Sala;
-import Poderes.Poder;
 import Poderes.*;
 import java.util.ArrayList;
 
@@ -15,13 +14,20 @@ public abstract class Usuario {
     private String apodo;
     private boolean conectado;
     public Poder tipoPoder;
-    public Usuario(String ID, String apodo) {
+   public Usuario(String ID, String apodo) {
         this.ID = ID;
         this.apodo = apodo;
         this.conectado = false;
         
         this.salasSuscritas = new ArrayList<>();
     }
+   //DECORATOR
+   public Usuario(Usuario usuario){
+       this.ID = usuario.getID();
+       this.apodo = usuario.getApodo();
+       this.conectado = usuario.isConectado();
+       this.salasSuscritas = usuario.getSalasSuscritas();
+   }
     
     public ArrayList<Sala> getSalasSuscritas() {
         return salasSuscritas;
@@ -34,7 +40,7 @@ public abstract class Usuario {
     public String getID() {
         return ID;
     }
-
+    
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -82,7 +88,6 @@ public abstract class Usuario {
     public void deshacerUltimaAccion(){
         this.tipoPoder.deshacerUltimaAccion();
     }
-    
     public abstract void enviarSusurro(String mensaje, Sala objetivo, Usuario receptor);
     
     public abstract void enviarMensaje(String mensaje, Sala objetivo);

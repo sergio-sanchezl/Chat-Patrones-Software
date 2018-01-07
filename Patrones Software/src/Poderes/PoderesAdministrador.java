@@ -18,18 +18,25 @@ public class PoderesAdministrador extends Poder {
      * Puede echar a quien quiera, es el administrador.
      */
     public void echarUsuario(Sala sala, Usuario usuario) {
-        EcharUsuario echar = new EcharUsuario(sala, usuario);
-        accionar = new Invocador(echar);
-        accionar.accionar();
         if (sala.getModeradores().contains(usuario)) { //Si el usuario es administrador
-            QuitarModerador echarModerador = new QuitarModerador(sala, usuario);
+           EcharUsuario echar = new EcharUsuario(sala,usuario);
+           accionar = new Invocador(echar);
+           accionar.accionar();
+           //Echa al usuario independientemente de lo que sea
+           //Si echa a un usuario administrador de la sala, el miembro más antiguo se convierte en administrador
+           if(usuario==sala.getAdministrador()){
+               sala.setAdministrador(sala.getMiembros().get(0));
+           }
+           if(sala.getModeradores().contains(usuario)){ //Si el usuario es moderador, echarlo también
+            QuitarModerador echarModerador = new QuitarModerador(sala,usuario);
             accionar.setComando(echarModerador);
             accionar.accionar();
         }
     }
+    }
 
     @Override
-    public void añadirModerador(Sala sala, Usuario usuario) {
+    public void añadirModerador(Sala sala, Usuario usuario){
         AñadirModerador añadir = new AñadirModerador(sala,usuario);
         accionar = new Invocador(añadir);
         accionar.accionar();

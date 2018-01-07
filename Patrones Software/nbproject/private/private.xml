@@ -3,15 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sergio/Documents/NetBeansProjects/PatronesSoftware/src/patronessoftware/SalaPublica.java</file>
-            <file>file:/C:/Users/Sergio/Documents/NetBeansProjects/PatronesSoftware/src/patronessoftware/Administrador.java</file>
-            <file>file:/C:/Users/Sergio/Documents/NetBeansProjects/PatronesSoftware/src/patronessoftware/FactoriaUsuario.java</file>
-            <file>file:/C:/Users/Sergio/Documents/NetBeansProjects/PatronesSoftware/src/patronessoftware/PatronesSoftware.java</file>
-            <file>file:/C:/Users/Sergio/Documents/NetBeansProjects/PatronesSoftware/src/patronessoftware/FactoriaSala.java</file>
-            <file>file:/C:/Users/Sergio/Documents/NetBeansProjects/PatronesSoftware/src/patronessoftware/UsuarioEstandar.java</file>
-            <file>file:/C:/Users/Sergio/Documents/NetBeansProjects/PatronesSoftware/src/patronessoftware/Usuario.java</file>
-            <file>file:/C:/Users/Sergio/Documents/NetBeansProjects/PatronesSoftware/src/patronessoftware/SalaPrivada.java</file>
-            <file>file:/C:/Users/Sergio/Documents/NetBeansProjects/PatronesSoftware/src/patronessoftware/Sala.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/Poderes/PoderesAdministrador.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/Poderes/PoderesEstandar.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/Comandos/EcharUsuario.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/Poderes/Poder.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/patronessoftware/PatronesSoftware.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/Comandos/Command.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/Comandos/QuitarModerador.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/Comandos/EcharTodosUsuarios.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/patronessoftware/Administrador.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/patronessoftware/FactoriaUsuario.java</file>
+            <file>file:/C:/Users/Zamar/Desktop/Patrones/Chat-Patrones-Software/Patrones%20Software/src/Comandos/HacerModerador.java</file>
         </group>
     </open-files>
 </project-private>

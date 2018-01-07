@@ -14,6 +14,11 @@ public class UsuarioEstandar extends Usuario {
         super(ID, apodo);
         super.setTipoPoder(new PoderesEstandar());
     }
+    public UsuarioEstandar(Usuario usuario){
+        super(usuario);
+        super.setTipoPoder(new PoderesEstandar());
+
+    }
     
     @Override
     public void enviarMensaje(String mensaje, Sala objetivo) {
