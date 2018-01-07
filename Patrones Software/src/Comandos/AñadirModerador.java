@@ -6,24 +6,24 @@ import patronessoftware.*;
 
 /**
  *
- * @author Zamar
+ * @author Sergio
  */
-public class QuitarModerador implements Command{
+public class AñadirModerador implements Command{
     Sala sala;
     Usuario usuario;
-    public QuitarModerador(Sala sala,Usuario usuario) {
+    public AñadirModerador(Sala sala,Usuario usuario) {
         this.sala = sala;
         this.usuario = usuario;
     }
 
     @Override
     public void execute() {
-        sala.quitarModerador(usuario);
+        sala.añadirModerador(usuario);
     }
 
     @Override
     public void undo() {
-        sala.añadirModerador(usuario);
+        sala.quitarModerador(usuario);
     }
     
     

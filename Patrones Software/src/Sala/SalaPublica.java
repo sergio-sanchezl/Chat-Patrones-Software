@@ -1,15 +1,28 @@
 package Sala;
 
-import patronessoftware.Usuario;
+import Usuarios.Usuario;
 
 /**
- *
+ * Abstraccion
  * @author Sergio
  */
-public class SalaPublica extends SalaTest {
+public class SalaPublica extends Sala {
     
-    public SalaPublica(Usuario administrador, String titulo, String descripcion, int tamaño) {
-        super(administrador, titulo, descripcion, tamaño);
+    public SalaPublica(TipoSala sala) {
+        super(sala);
     }
+
+    @Override
+    public void suscribirse(Usuario usuario) {
+       super.getSala().suscribirse(usuario);
+    }
+
+    @Override
+    public void suscribirse(Usuario usuario, String contraseña) {
+        // como es publica no pedimos contraseña incluso si la ponen
+        super.getSala().suscribirse(usuario);
+    }
+    
+    
     
 }

@@ -5,7 +5,7 @@
  */
 package Sala;
 
-import patronessoftware.Usuario;
+import Usuarios.Usuario;
 
 /**
  * Concreto del implementador, esto es el caso de implementar el publico, el constructor no necesitará contraseña.
@@ -16,9 +16,4 @@ public class TipoPublica extends TipoSala {
     public TipoPublica(Usuario administrador, String titulo, String descripcion, int tamaño) {
         super(administrador, titulo, descripcion, tamaño);
     }
-    @Override
-    public void suscribirse(Usuario usuario, String contraseña) {
-       super.suscribirse(usuario); //Obviamos la contraseña, after all es publico.
-    }
-    
 }

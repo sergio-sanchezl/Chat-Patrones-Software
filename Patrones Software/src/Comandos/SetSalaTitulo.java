@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Comandos;
 
-import Sala.SalaTest;
+import Sala.Sala;
 import patronessoftware.*;
 
 /**
@@ -13,10 +8,10 @@ import patronessoftware.*;
  * @author Zamar
  */
 public class SetSalaTitulo implements Command{
-    SalaTest sala;
+    Sala sala;
     String titulo;
     String antiguotitulo;
-    public SetSalaTitulo(SalaTest sala,String titulo) {
+    public SetSalaTitulo(Sala sala,String titulo) {
         this.sala = sala;
         this.titulo = titulo;
         this.antiguotitulo = sala.getTitulo();
