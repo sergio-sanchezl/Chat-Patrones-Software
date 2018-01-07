@@ -20,6 +20,7 @@ public abstract class TipoSala {
     private String descripcion;
     private String mensajeBienvenida;
     private int tamaño;
+    private String contraseña;
 
   
     public TipoSala(Usuario administrador, String titulo, String descripcion, int tamaño) {
@@ -30,6 +31,23 @@ public abstract class TipoSala {
         this.moderadores = new ArrayList<>();
         this.miembros = new ArrayList<>();
     }
+
+    public String getMensajeBienvenida() {
+        return mensajeBienvenida;
+    }
+
+    public void setMensajeBienvenida(String mensajeBienvenida) {
+        this.mensajeBienvenida = mensajeBienvenida;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+     
     public Usuario getAdministrador() {
         return administrador;
     }
@@ -89,7 +107,6 @@ public abstract class TipoSala {
             System.out.println("La sala" + this.titulo +"ha alcanzado el límite de usuarios");
         }
     }
-    public abstract void suscribirse(Usuario usuario,String contraseña);
     
     
     public void desuscribirse(Usuario usuario) {

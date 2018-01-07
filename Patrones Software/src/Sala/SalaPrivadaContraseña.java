@@ -15,10 +15,14 @@ public class SalaPrivadaContraseña extends Sala {
 
     @Override
     public void suscribirse(Usuario usuario) {
-        
+        System.out.println("Necesitas introducir una contraseña");
     }
 
     @Override
     public void suscribirse(Usuario usuario, String contraseña) {
+        if(super.getSala().getContraseña().equals(contraseña)){
+            super.getSala().suscribirse(usuario);
+        }else 
+            System.out.println("Contraseña Incorrecta");
     }
 }

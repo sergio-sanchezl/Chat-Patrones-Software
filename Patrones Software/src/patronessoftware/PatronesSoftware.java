@@ -1,4 +1,5 @@
 package patronessoftware;
+import Sala.FactoriaSala;
 import Sala.Sala;
 import Comandos.*;
 /**
@@ -25,7 +26,6 @@ public class PatronesSoftware {
         Sala salaotra = sala;
            System.out.println("Sally HashCode: " + System.identityHashCode(System.identityHashCode(sala)));
         System.out.println("Clone HashCode: " + System.identityHashCode(System.identityHashCode(salaotra)));
-        /*
         user2.suscribirse(sala);
         user3.suscribirse(sala);
         
@@ -35,7 +35,7 @@ public class PatronesSoftware {
         user1.enviarMensaje("Hello!", sala);
         user1.deshacerUltimaAccion(); //Con Command es muy facil deshacer la ultima accion
         
-        user1.echarUsuario(sala, user3);*/
+        user1.echarUsuario(sala, user3);
         
         
             
