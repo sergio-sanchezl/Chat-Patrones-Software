@@ -11,10 +11,10 @@ import patronessoftware.*;
  */
 public abstract class Poder {
     protected Invocador accionar;
-    public abstract void echarUsuario(Sala sala, Usuario usuario);
+    public abstract void echarUsuario(Sala sala, Usuario emisor,Usuario receptor);
     
-    public abstract void añadirModerador(Sala sala, Usuario usuario);
-    public abstract void quitarModerador(Sala sala, Usuario usuario);
+    public abstract void añadirModerador(Sala sala, Usuario emisor,Usuario receptor);
+    public abstract void quitarModerador(Sala sala, Usuario usuario,Usuario receptor);
     
     // Todos pueden enviar mensajes, por lo que lo implementamos aquí.
     public void enviarMensaje(Sala sala, Usuario emisor, String mensaje) {

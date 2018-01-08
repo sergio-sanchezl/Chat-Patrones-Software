@@ -1,8 +1,6 @@
 package Poderes;
 
-import Comandos.EcharUsuario;
-import Comandos.Invocador;
-import Comandos.QuitarModerador;
+import Comandos.*;
 import Sala.Sala;
 import Usuarios.Usuario;
 
@@ -14,45 +12,57 @@ import Usuarios.Usuario;
 
 public class PoderesEstandar extends Poder {
 
-    @Override
+    
     /**
      * No puede echar a nadie
      */
-    public void echarUsuario(Sala sala, Usuario usuario) {
+    
+    public boolean cumplePermisos(Sala sala, Usuario emisor,Usuario receptor){
+        if(emisor.equals(sala.getAdministrador()) //Es administrador local
+                ||
+          sala.getModeradores().contains(emisor) && !(sala.getModeradores().contains(receptor)) || sala.getAdministrador().equals(receptor) //Es moderador y el otro no es administrador local o moderador.
+            ) return true;
+        else return false;
+            }
+    @Override
+    public void echarUsuario(Sala sala, Usuario emisor,Usuario receptor) {
           // 3 casos
           //1 usuario es administrador local en sala, puede echar moderadores también
-          if(usuario==sala.getAdministrador()){
-                EcharUsuario echar = new EcharUsuario(sala,usuario);
-                this.accionar = new Invocador(echar);
-                accionar.accionar();
-                 if(sala.getModeradores().contains(usuario)){ //Si el usuario es moderador, echarlo también
-                     QuitarModerador echarModerador = new QuitarModerador(sala,usuario);
-                     this.accionar.setComando(echarModerador);
-                     this.accionar.accionar();
-                }
-          }
-          //2 usuario es moderador en sala
-          else if(sala.getModeradores().contains(usuario)){
-                if(usuario != sala.getAdministrador() && !sala.getModeradores().contains(usuario)){
-                     EcharUsuario echar = new EcharUsuario(sala,usuario);
-                     this.accionar = new Invocador(echar);
+          EcharUsuario comando = new EcharUsuario(sala,receptor);
+          if (cumplePermisos(sala, emisor, receptor)){
+                     this.accionar = new Invocador(comando);
                      this.accionar.accionar();
                  }  
-          }
-          //3 el usuario es estandar en sala
+          //3 
           else{
               System.out.println("No tienes poderes en esta sala");
           }
     }
 
     @Override
-    public void añadirModerador(Sala sala, Usuario usuario) {
-        //Hacer permisos
+    public void añadirModerador(Sala sala, Usuario emisor, Usuario receptor) {
+        AñadirModerador comando = new AñadirModerador(sala,receptor);
+          if (cumplePermisos(sala, emisor, receptor)){
+                     this.accionar = new Invocador(comando);
+                     this.accionar.accionar();
+                 }  
+          //3 
+          else{
+              System.out.println("No tienes poderes en esta sala");
+          }
     }
 
     @Override
-    public void quitarModerador(Sala sala, Usuario usuario) {
-        //Hacer permisos
+    public void quitarModerador(Sala sala, Usuario emisor,Usuario receptor) {
+      QuitarModerador comando = new QuitarModerador(sala,receptor);
+          if (cumplePermisos(sala, emisor, receptor)){
+                     this.accionar = new Invocador(comando);
+                     this.accionar.accionar();
+                 }  
+          //3 
+          else{
+              System.out.println("No tienes poderes en esta sala");
+          }
     }
     
 }
