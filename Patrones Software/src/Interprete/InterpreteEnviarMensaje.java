@@ -9,6 +9,11 @@ package Interprete;
  *
  * @author Sergio
  */
-public interface Interprete {
-    public void interpretar(Contexto contexto);
+public class InterpreteEnviarMensaje implements Interprete {
+
+    @Override
+    public void interpretar(Contexto contexto) {
+        System.out.println("InterpreteEnviarMensaje con contexto: " + contexto.toString());
+    }
+    
 }
