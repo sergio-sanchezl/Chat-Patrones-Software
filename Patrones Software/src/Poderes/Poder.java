@@ -15,6 +15,8 @@ public abstract class Poder {
     
     public abstract void añadirModerador(Sala sala, Usuario emisor,Usuario receptor);
     public abstract void quitarModerador(Sala sala, Usuario usuario,Usuario receptor);
+    public abstract void cambiarNombreSala(Sala sala, Usuario usuario, String nombreSala);
+    public abstract void cambiarDescripcionSala(Sala sala, Usuario usuario, String descripcionSala);
     
     // Todos pueden enviar mensajes, por lo que lo implementamos aquí.
     public void enviarMensaje(Sala sala, Usuario emisor, String mensaje) {
@@ -29,6 +31,8 @@ public abstract class Poder {
         accionar = new Invocador(enviarSusurro);
         accionar.accionar();
     }
+    
+    
     
     public void deshacerUltimaAccion(){
         accionar.deshacer();

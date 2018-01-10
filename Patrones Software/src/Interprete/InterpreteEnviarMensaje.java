@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interprete;
+
+import Sala.Sala;
+import Usuarios.Usuario;
 
 /**
  *
@@ -14,6 +12,12 @@ public class InterpreteEnviarMensaje implements Interprete {
     @Override
     public void interpretar(Contexto contexto) {
         System.out.println("InterpreteEnviarMensaje con contexto: " + contexto.toString());
+        
+        Usuario emisor = contexto.getEmisor();
+        String mensaje = contexto.getMensaje();
+        Sala sala = contexto.getSala();
+        
+        emisor.enviarMensaje(mensaje, sala);
     }
     
 }

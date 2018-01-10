@@ -99,7 +99,11 @@ public abstract class Sala {
 
     public void procesarInput(String texto, Usuario emisor) {
         //this.enviarMensaje(texto, emisor);
-        new Parser().interpretar(this, emisor, texto);
+        if (getMiembros().contains(emisor)) {
+            new Parser().interpretar(this, emisor, texto);
+        } else {
+            System.out.println("Alguien ha intentado enviar un mensaje a una sala de la cual no es miembro.");
+        }
     }
 
     public void enviarMensaje(String texto, Usuario emisor) {
@@ -107,9 +111,9 @@ public abstract class Sala {
             usuario.recibirMensaje(texto, emisor, this);
         }
     }
-    
+
     public void enviarSusurro(String texto, Usuario emisor, Usuario receptor) {
-        if(this.sala.getMiembros().contains(receptor)) {
+        if (this.sala.getMiembros().contains(receptor)) {
             receptor.recibirMensaje("[SUSURRO] " + texto, emisor, this);
         }
     }
@@ -118,6 +122,5 @@ public abstract class Sala {
     public String toString() {
         return sala.getTitulo();
     }
-    
-    
+
 }

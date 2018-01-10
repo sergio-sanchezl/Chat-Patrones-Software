@@ -4,6 +4,8 @@ import Comandos.AñadirModerador;
 import Comandos.EcharUsuario;
 import Comandos.Invocador;
 import Comandos.QuitarModerador;
+import Comandos.SetSalaDescripcion;
+import Comandos.SetSalaTitulo;
 import Sala.Sala;
 import Usuarios.Usuario;
 
@@ -34,6 +36,20 @@ public class PoderesAdministrador extends Poder {
     public void quitarModerador(Sala sala, Usuario emisor, Usuario receptor) {
         QuitarModerador quitar = new QuitarModerador(sala,receptor);
         accionar = new Invocador(quitar);
+        accionar.accionar();
+    }
+
+    @Override
+    public void cambiarNombreSala(Sala sala, Usuario usuario, String nombreSala) {
+        SetSalaTitulo setTitulo = new SetSalaTitulo(sala, nombreSala);
+        accionar = new Invocador(setTitulo);
+        accionar.accionar();
+    }
+
+    @Override
+    public void cambiarDescripcionSala(Sala sala, Usuario usuario, String descripcionSala) {
+        SetSalaDescripcion setDescripcion = new SetSalaDescripcion(sala, descripcionSala);
+        accionar = new Invocador(setDescripcion);
         accionar.accionar();
     }
 

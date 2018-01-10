@@ -5,6 +5,9 @@
  */
 package Interprete;
 
+import Sala.Sala;
+import Usuarios.Usuario;
+
 /**
  *
  * @author Sergio
@@ -14,6 +17,12 @@ public class InterpreteQuitarModerador implements Interprete {
     @Override
     public void interpretar(Contexto contexto) {
         System.out.println("InterpreteQuitarModerador con contexto: " + contexto.toString());
+        
+        Usuario emisor = contexto.getEmisor();
+        Usuario receptor = contexto.getReceptor();
+        Sala sala = contexto.getSala();
+        
+        emisor.tipoPoder.quitarModerador(sala, emisor, receptor);
     }
     
 }

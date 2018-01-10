@@ -3,7 +3,6 @@ import Usuarios.Usuario;
 import Usuarios.FactoriaUsuario;
 import Sala.FactoriaSala;
 import Sala.Sala;
-import Interprete.Parser;
 /**
  * @author Sergio
  */
@@ -41,9 +40,9 @@ public class PatronesSoftware {
         user1.echarUsuario(sala, user3);*/
         
         System.out.println("--- --- ---");
-        Parser.interpretar(sala, user1, "/susurro Tony hola que tal?");
+        sala.procesarInput("/susurro Tony hola que tal?", user1);
         System.out.println("--- --- ---");
-        Parser.interpretar(sala, user2, "Me gustan las patatas fritas");
+        /*Parser.interpretar(sala, user2, "Me gustan las patatas fritas");
         System.out.println("--- --- ---");
         Parser.interpretar(sala, user1, "/echar Tony");
         System.out.println("--- --- ---");
@@ -56,7 +55,7 @@ public class PatronesSoftware {
         Parser.interpretar(sala, user2, "/cambiardescripcion Hola");
         System.out.println("--- --- ---");
         Parser.interpretar(sala, user2, " ");
-        System.out.println("--- --- ---");
+        System.out.println("--- --- ---");*/
         
             
     }

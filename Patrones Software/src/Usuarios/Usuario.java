@@ -82,8 +82,8 @@ public abstract class Usuario {
     public void setTipoPoder(Poder tipoPoder) {
         this.tipoPoder = tipoPoder;
     }
-    public void echarUsuario(Sala sala, Usuario Usuario){
-        this.tipoPoder.echarUsuario(sala, Usuario);
+    public void echarUsuario(Sala sala, Usuario usuario){
+        this.tipoPoder.echarUsuario(sala, this, usuario);
     }
     public void deshacerUltimaAccion(){
         this.tipoPoder.deshacerUltimaAccion();
