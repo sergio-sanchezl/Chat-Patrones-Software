@@ -29,4 +29,6 @@ public class UsuarioEstandar extends Usuario {
     public void enviarSusurro(String mensaje, Sala objetivo, Usuario receptor) {
         super.tipoPoder.enviarSusurro(objetivo, this, receptor, mensaje);
     }
+
+    
 }

@@ -8,17 +8,21 @@ import java.util.ArrayList;
  *
  * @author Sergio
  */
-public abstract class Usuario {
+public abstract class Usuario implements Sujeto {
     private ArrayList<Sala> salasSuscritas;
     private String ID;
     private String apodo;
     private boolean conectado;
     public Poder tipoPoder;
+    
+    private ArrayList<Observador> observadores = new ArrayList<>();
+    
+    private String ultimoMensaje = "";
+    
    public Usuario(String ID, String apodo) {
         this.ID = ID;
         this.apodo = apodo;
-        this.conectado = false;
-        
+        this.conectado = true;
         this.salasSuscritas = new ArrayList<>();
     }
    //DECORATOR
@@ -59,6 +63,7 @@ public abstract class Usuario {
 
     public void setConectado(boolean conectado) {
         this.conectado = conectado;
+        notificarObservadores();
     }
     
     public void suscribirse(Sala sala) {
@@ -72,7 +77,8 @@ public abstract class Usuario {
     }
     
     public void recibirMensaje(String mensaje, Usuario user, Sala sala) {
-        System.out.println("[Sala \"" + sala.getTitulo() + "\"] El usuario " + this.ID + " " + this.apodo + " ha recibido el mensaje: \"" + mensaje + "\" de " + user.getID() + " " + user.getApodo());
+        ultimoMensaje = "[Sala \"" + sala.getTitulo() + "\"] El usuario " + this.ID + " " + this.apodo + " ha recibido el mensaje: \"" + mensaje + "\" de " + user.getID() + " " + user.getApodo();
+        notificarObservadores();
     }
 
     public Poder getTipoPoder() {
@@ -97,6 +103,29 @@ public abstract class Usuario {
         return "Usuario{" + "ID=" + ID + ", apodo=" + apodo + '}';
     }
     
+    @Override
+    public MedioSujetoObservador getUltimoMensajeYConexion() {
+        MedioSujetoObservador datos = new MedioSujetoObservador(conectado, ultimoMensaje);
+        ultimoMensaje = "";
+        return datos;
+    }
+
+    @Override
+    public void añadirObservador(Observador o) {
+        observadores.add(o);
+    }
+
+    @Override
+    public void eliminarObservador(Observador o) {
+        observadores.remove(o);
+    }
+
+    @Override
+    public void notificarObservadores() {
+        for(Observador o : observadores) {
+            o.actualizar();
+        }
+    }
     
     
 }

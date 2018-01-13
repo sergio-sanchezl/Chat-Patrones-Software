@@ -38,10 +38,16 @@ public class PatronesSoftware {
         user1.deshacerUltimaAccion(); //Con Command es muy facil deshacer la ultima accion
         
         user1.echarUsuario(sala, user3);*/
-        
-        System.out.println("--- --- ---");
+        user2.setConectado(false);
+        sala.procesarInput("Hola chicooos",user1);
+        sala.procesarInput("Que tal?",user1);
+        sala.procesarInput("Bien!",user3);
+        sala.procesarInput("Me alegro!",user1);
+        System.out.println("2 Tony CONECTANDOSE"); 
+        user2.setConectado(true);
+        /*System.out.println("--- --- ---");
         sala.procesarInput("/susurro Tony hola que tal?", user1);
-        System.out.println("--- --- ---");
+        System.out.println("--- --- ---");*/
         /*Parser.interpretar(sala, user2, "Me gustan las patatas fritas");
         System.out.println("--- --- ---");
         Parser.interpretar(sala, user1, "/echar Tony");
