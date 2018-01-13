@@ -100,7 +100,7 @@ public abstract class Sala {
     public void procesarInput(String texto, Usuario emisor) {
         //this.enviarMensaje(texto, emisor);
         if (getMiembros().contains(emisor)) {
-            new Parser().interpretar(this, emisor, texto);
+            Parser.interpretar(this, emisor, texto);
         } else {
             System.out.println("Alguien ha intentado enviar un mensaje a una sala de la cual no es miembro.");
         }

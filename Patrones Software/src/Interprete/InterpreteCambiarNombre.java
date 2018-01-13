@@ -11,7 +11,7 @@ public class InterpreteCambiarNombre implements Interprete {
 
     @Override
     public void interpretar(Contexto contexto) {
-        System.out.println("InterpreteCambiarNombre con contexto: " + contexto.toString());
+        //System.out.println("InterpreteCambiarNombre con contexto: " + contexto.toString());
         
         Usuario usuario = contexto.getEmisor();
         Sala sala = contexto.getSala();

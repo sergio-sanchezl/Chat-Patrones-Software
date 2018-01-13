@@ -11,7 +11,7 @@ public class InterpreteEnviarMensaje implements Interprete {
 
     @Override
     public void interpretar(Contexto contexto) {
-        System.out.println("InterpreteEnviarMensaje con contexto: " + contexto.toString());
+        //System.out.println("InterpreteEnviarMensaje con contexto: " + contexto.toString());
         
         Usuario emisor = contexto.getEmisor();
         String mensaje = contexto.getMensaje();

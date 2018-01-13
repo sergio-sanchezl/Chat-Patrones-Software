@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Sergio/Documents/GitHub/Chat-Patrones-Software/Patrones%20Software/src/Usuarios/MedioSujetoObservador.java</file>
+            <file>file:/C:/Users/Sergio/Documents/GitHub/Chat-Patrones-Software/Patrones%20Software/src/Usuarios/FactoriaUsuario.java</file>
+            <file>file:/C:/Users/Sergio/Documents/GitHub/Chat-Patrones-Software/Patrones%20Software/src/patronessoftware/PatronesSoftware.java</file>
+            <file>file:/C:/Users/Sergio/Documents/GitHub/Chat-Patrones-Software/Patrones%20Software/src/Usuarios/AlmacenajeMensajes.java</file>
+            <file>file:/C:/Users/Sergio/Documents/GitHub/Chat-Patrones-Software/Patrones%20Software/src/Usuarios/Administrador.java</file>
+            <file>file:/C:/Users/Sergio/Documents/GitHub/Chat-Patrones-Software/Patrones%20Software/src/Usuarios/Usuario.java</file>
+            <file>file:/C:/Users/Sergio/Documents/GitHub/Chat-Patrones-Software/Patrones%20Software/src/Usuarios/Observador.java</file>
+        </group>
     </open-files>
 </project-private>

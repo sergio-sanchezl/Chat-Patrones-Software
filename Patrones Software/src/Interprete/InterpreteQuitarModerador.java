@@ -16,7 +16,7 @@ public class InterpreteQuitarModerador implements Interprete {
 
     @Override
     public void interpretar(Contexto contexto) {
-        System.out.println("InterpreteQuitarModerador con contexto: " + contexto.toString());
+        //System.out.println("InterpreteQuitarModerador con contexto: " + contexto.toString());
         
         Usuario emisor = contexto.getEmisor();
         Usuario receptor = contexto.getReceptor();

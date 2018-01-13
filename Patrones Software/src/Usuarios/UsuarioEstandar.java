@@ -5,7 +5,7 @@ import Poderes.PoderesEstandar;
 import Poderes.*;
 
 /**
- *
+ * Usuario estándar del servidor, véase, no es administrador global.
  * @author Sergio
  */
 public class UsuarioEstandar extends Usuario {

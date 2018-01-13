@@ -2,7 +2,9 @@
 package Usuarios;
 
 /**
- *
+ * Interfaz creada para indicar el sujeto del patrón observer.
+ * Preparada para admitir observadores y enviar información en forma de 
+ * clase MedioSujetoObservador, que con tiene bool conectado y String ultimoMensaje.
  * @author Sergio
  */
 public interface Sujeto {

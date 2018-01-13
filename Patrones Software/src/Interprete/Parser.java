@@ -27,7 +27,7 @@ public class Parser {
         
         Interprete interprete;
         
-        System.out.println("PARSER INPUT: " + input);
+        //System.out.println("PARSER INPUT: " + input);
         switch(st.countTokens()) {
             case 0:
                 interprete = new InterpreteEnviarMensaje();

@@ -5,7 +5,8 @@ import Poderes.*;
 import java.util.ArrayList;
 
 /**
- *
+ * Clase que representa el Usuario, ya sea administrador o no administrador.
+ * Incluye su 
  * @author Sergio
  */
 public abstract class Usuario implements Sujeto {

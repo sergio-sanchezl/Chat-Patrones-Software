@@ -50,12 +50,10 @@ public class AlmacenajeMensajes implements Observador {
     @Override
     public void actualizar() {
         ultimoMensajeYConexion = sujeto.getUltimoMensajeYConexion();
-        //System.out.println(ultimoMensajeYConexion.toString());
         
         // Si el ultimo mensaje es vacio, significa que solo ha cambiado 
         // su estado de conexión.
         if(!ultimoMensajeYConexion.ultimoMensaje.equals("")) {
-            System.out.println("añadiendo");
             mensajes.add(ultimoMensajeYConexion.ultimoMensaje);
         }
         enviarNoEnviados();
