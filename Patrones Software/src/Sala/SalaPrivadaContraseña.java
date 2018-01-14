@@ -15,7 +15,9 @@ public class SalaPrivadaContraseña extends Sala {
 
     @Override
     public void suscribirse(Usuario usuario) {
-        System.out.println("Necesitas introducir una contraseña");
+        if(super.getSala().getContraseña().isEmpty()){
+            super.getSala().suscribirse(usuario);
+        }else System.out.println("Contraseña Incorrecta");
     }
 
     @Override
@@ -24,5 +26,9 @@ public class SalaPrivadaContraseña extends Sala {
             super.getSala().suscribirse(usuario);
         }else 
             System.out.println("Contraseña Incorrecta");
+    }
+    @Override
+    public boolean tieneContraseña() {
+        return super.getSala().tieneContraseña();
     }
 }

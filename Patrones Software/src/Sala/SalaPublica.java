@@ -23,6 +23,8 @@ public class SalaPublica extends Sala {
         super.getSala().suscribirse(usuario);
     }
     
-    
-    
+    @Override
+    public boolean tieneContraseña() {
+        return false; //Si es publica no queremos ni contraseña.
+    }
 }

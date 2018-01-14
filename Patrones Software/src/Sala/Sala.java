@@ -122,5 +122,6 @@ public abstract class Sala {
     public String toString() {
         return sala.getTitulo();
     }
+     public abstract boolean tieneContraseña();
 
 }

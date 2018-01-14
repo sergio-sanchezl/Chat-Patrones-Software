@@ -131,6 +131,8 @@ public abstract class TipoSala {
         }
     }
     
-    
+    public boolean tieneContraseña(){
+        return !this.getContraseña().isEmpty();
+   }
 
 }
