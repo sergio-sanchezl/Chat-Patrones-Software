@@ -15,8 +15,8 @@ public class PoderesEstandar extends Poder {
      */
     public boolean cumplePermisos(Sala sala, Usuario emisor, Usuario receptor) {
         if (emisor.equals(sala.getAdministrador()) //Es administrador local
-                || sala.getModeradores().contains(emisor) && !(sala.getModeradores().contains(receptor)) || sala.getAdministrador().equals(receptor) //Es moderador y el otro no es administrador local o moderador.
-                ) {
+                || (sala.getModeradores().contains(emisor) && !(sala.getModeradores().contains(receptor) || sala.getAdministrador().equals(receptor)) //Es moderador y el otro no es administrador local o moderador.
+                )) {
             return true;
         } else {
             return false;

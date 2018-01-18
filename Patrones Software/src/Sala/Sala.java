@@ -83,7 +83,7 @@ public abstract class Sala {
 
     public void desuscribirse(Usuario usuario) {
         if (this.sala.getMiembros().remove(usuario)) {
-            System.out.print(usuario.getApodo() + " de la SalaTest: " + this.getTitulo() + "\n");
+            System.out.print(usuario.getApodo() + " de la Sala: " + this.getTitulo() + "\n");
         } else {
             System.out.println("El usuario no existe en la sala \n");
         }

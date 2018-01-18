@@ -11,6 +11,9 @@ public class SalaPublica extends Sala {
     public SalaPublica(TipoSala sala) {
         super(sala);
     }
+    public SalaPublica(SalaPrivadaContraseña sala) {
+        super(sala.getSala());
+    }
 
     @Override
     public void suscribirse(Usuario usuario) {
